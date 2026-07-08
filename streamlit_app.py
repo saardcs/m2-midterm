@@ -222,6 +222,33 @@ def render_graph_visualization(item):
         else:
             st.info("Enter valid edges to visualize the friendship network.")
 
+def render_tower_coloring(item):
+    st.write(item["text"])
+
+    colors = [""] + item["colors"]
+    num_blocks = len(item["colors"])
+    num_towers = math.factorial(num_blocks)
+
+    tower_inputs = {}
+
+    cols = st.columns(num_towers)
+
+    for i, col in enumerate(cols):
+        with col:
+            st.markdown(f"**Tower {i+1}**")
+
+            tower_inputs[i] = []
+
+            for block in range(num_blocks):
+                tower_inputs[i].append(
+                    st.selectbox(
+                        "",
+                        colors,
+                        key=f"{item['id']}_tower{i}_block{block}",
+                        label_visibility="collapsed"
+                    )
+                )
+
 def render_item(item, components=None):
     match item["type"]:
         case "mcq":
@@ -242,6 +269,8 @@ def render_item(item, components=None):
             render_drawing(item)
         case "graph_visualization":
             render_graph_visualization(item)
+        case "tower_coloring":
+            render_tower_coloring(item)
         case _:
             st.warning(f"Unknown item type: {item['type']}")
 
