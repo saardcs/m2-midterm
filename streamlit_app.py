@@ -489,6 +489,37 @@ def grade_edge_list(edge_inputs, expected_edges, max_points):
     score = max((correct - wrong) / total, 0)
     return round(score * max_points, 2)
 
+from itertools import permutations
+
+def grade_tower_coloring(item, session_state):
+    colors = item["colors"]
+    max_points = item["max_points"]
+
+    correct = {tuple(p) for p in permutations(colors)}
+    found = set()
+
+    num_towers = len(correct)
+
+    for tower in range(num_towers):
+        arrangement = tuple(
+            session_state.get(
+                f"{item['id']}_tower{tower}_block{block}",
+                ""
+            )
+            for block in range(len(colors))
+        )
+
+        # Ignore incomplete towers
+        if "" in arrangement:
+            continue
+
+        # Count only unique correct towers
+        if arrangement in correct:
+            found.add(arrangement)
+
+    score = max_points * len(found) / len(correct)
+    return round(score, 2)
+
 
 def grade_exam():
     total_score = 0
@@ -630,6 +661,23 @@ def grade_exam():
                     "score": score,
                     "type": item_type
                 }
+                section_score += score
+
+            elif item_type == "tower_coloring":
+                score = grade_tower_coloring(item, st.session_state)
+
+                submission["answers"][section_name][item_id] = {
+                    "type": item_type,
+                    "score": score,
+                    "towers": {
+                        f"tower{i+1}": [
+                            st.session_state.get(f"{item_id}_tower{i}_block{b}", "")
+                            for b in range(len(item["colors"]))
+                        ]
+                        for i in range(math.factorial(len(item["colors"])))
+                    }
+                }
+
                 section_score += score
 
 
