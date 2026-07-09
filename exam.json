@@ -87,7 +87,7 @@
         {
           "type": "instruction",
           "text": "Suppose that the four-character code has the following restrictions:\n- Numbers and letters\n- Uppercase and lowercase letters\n- Cannot repeat characters",
-          "image": "images/4char.png"
+          "image": "images/5char.png"
         },
         {
           "type": "mcq",
@@ -116,7 +116,7 @@
         {
           "type": "mcq",
           "id": "q9",
-          "text": "9. How many possible characters are there for the first spot in the password?",
+          "text": "9. How many possible characters are there for the **first** spot in the password?",
           "options": [
             "60",
             "62",
@@ -128,7 +128,7 @@
         {
           "type": "mcq",
           "id": "q10",
-          "text": "10. How many possible characters are there for the fourth spot in the password?",
+          "text": "10. How many possible characters are there for the **fourth** spot in the password?",
           "options": [
             "60",
             "58",
@@ -181,7 +181,7 @@
         {
           "type": "mcq",
           "id": "q14",
-          "text": "14. How many possible characters are there for the first spot in the password?",
+          "text": "14. How many possible characters are there for the **first** spot in the password?",
           "options": [
             "62",
             "10",
@@ -193,7 +193,7 @@
         {
           "type": "mcq",
           "id": "q15",
-          "text": "15. How many possible characters are there for the fourth spot in the password?",
+          "text": "15. How many possible characters are there for the **fourth** spot in the password?",
           "options": [
             "60",
             "10",
@@ -207,9 +207,9 @@
           "id": "q16",
           "text": "16. How many total password combinations are possible?",
           "options": [
-            "44,261,653,680",
-            "916,132,832",
-            "100,000",
+            "776,520,240",
+            "14,776,336",
+            "10,000",
             "5040"
           ],
           "max_points": 0.5
