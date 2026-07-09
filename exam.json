@@ -231,9 +231,9 @@
         {
           "type": "gcf_subtraction",
           "id": "q18",
-          "num1": 30,
-          "num2": 6,
-          "text": "18. Use the subtraction method to find the GCF of **25** and **50**.",
+          "num1": 13,
+          "num2": 26,
+          "text": "18. Use the subtraction method to find the GCF of **13** and **26**.",
           "max_points": 1
         },
         {
