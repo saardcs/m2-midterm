@@ -28,7 +28,7 @@
         {
           "type": "mcq",
           "id": "q3",
-          "text": "3. How many different three-block towers can you make if there is a restriction that the red block cannot be at the top?",
+          "text": "3. How many different three-block towers can you make if there is a restriction that the blue block cannot be at the top?",
           "options": [
             "2",
             "4",
