@@ -86,7 +86,7 @@
       "items": [
         {
           "type": "instruction",
-          "text": "Suppose that the four-character code has the following restrictions:\n- Numbers and letters\n- Uppercase and lowercase letters\n- Cannot repeat characters",
+          "text": "Suppose that the five-character code has the following restrictions:\n- Numbers and letters\n- Uppercase and lowercase letters\n- Cannot repeat characters",
           "image": "images/5char.png"
         },
         {
@@ -128,7 +128,7 @@
         {
           "type": "mcq",
           "id": "q10",
-          "text": "10. How many possible characters are there for the **fourth** spot in the password?",
+          "text": "10. How many possible characters are there for the **fifth** spot in the password?",
           "options": [
             "60",
             "58",
